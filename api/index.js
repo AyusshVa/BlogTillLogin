@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const multer = require("multer");
+const path = require("path");
 dotenv.config();
 
 const mongoose = require("mongoose");
@@ -11,6 +12,7 @@ const postRoute = require("./routes/posts");
 const CategoryRoute = require("./routes/categories");
 
 app.use(express.json()); // this is like body parser, like we can get the req by just req.body
+app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -26,13 +28,14 @@ const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     //decides where will the file go.
     // it will take 3 params, req, file(the uploaded file), and a callback to handle err
-    cb(null, "./images");
+    cb(null, "./images"); // what does the cd do here?
   },
   filename: (req, file, cb) => {
-    cb(null, req.body.name);
+    cb(null, req.body.name); // what's cb
   },
 });
 
+// didn't created any route for upload file as its just a small code.
 const upload = multer({ storage: storage }); // function to upload files.
 app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("file has uploaded");

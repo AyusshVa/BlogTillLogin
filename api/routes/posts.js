@@ -8,12 +8,14 @@ const Post = require("../models/Post"); // we are taking post as if a user is de
 // *********************** CREATE POST
 
 router.post("/", async (req, res) => {
-  const post = new Post(req.body); // creating a new post with req.body as param, another was is to (new Post({enter the datamembers}))
+  const post = new Post(req.body); // creating a new post with req.body as param, as we get a post, its same as is to (new Post({enter the datamembers}))
+  // req.body contains, an object {username: user, title, desc} as defined in post model
   try {
     const savedPost = await post.save();
     res.status(200).json(savedPost);
   } catch (err) {
     res.status(500).json(err.message);
+    // console.log("error is occuring in posting");
   }
 });
 
