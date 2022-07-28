@@ -9,8 +9,8 @@ import axios from "axios";
 export default function SinglePost() {
   var location = useLocation(); // this single post will be on '/post/id' as it is defined in the app.js
   const path = location.pathname.split("/")[2]; // location.pathname = endpont of this post, and  we found the id of post as path
-
   const [post, setPost] = useState({});
+  const PF = "http://localhost:5000/images/";
 
   useEffect(() => {
     const getPost = async () => {
@@ -26,7 +26,7 @@ export default function SinglePost() {
     <div className="singlePost">
       <div className="singlePostWrapper">
         {post.photo && (
-          <img className="singlePostImg" src={post.photo} alt="" />
+          <img className="singlePostImg" src={PF + post.photo} alt="" />
         )}
 
         <h1 className="singlePostTitle">

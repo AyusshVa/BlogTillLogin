@@ -20,4 +20,14 @@ export const loginFailure = () => {
   };
 };
 
+// for Logout
+
+export const logout = () => {
+  return {
+    type: "LOGOUT",
+  };
+};
+
 // now in the reducer, according to the action happened, we can update the state.
+
+// the criteria is that we define the type of any action, then in reducer we change the initial state wrt the action.
