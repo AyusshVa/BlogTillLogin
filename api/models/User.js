@@ -19,7 +19,8 @@ const UserSchema = new mongoose.Schema(
     },
     profilePic: {
       type: String,
-      default: "",
+      default:
+        "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png",
     },
   },
   { timesstamps: true } // this will give info about when the user is created and when its edited.

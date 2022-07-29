@@ -15,7 +15,10 @@ app.use(express.json()); // this is like body parser, like we can get the req by
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("connected to the mongo server");
   })
