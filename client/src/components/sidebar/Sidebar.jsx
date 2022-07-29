@@ -29,20 +29,18 @@ export default function Sidebar() {
           little known fact is that the red panda's nickname is “firefox.”
         </p>
       </div>
-      <div className="sidebarItem">
+      {/*<div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
           {cats.map((c) => (
             <li className="sidebarListItem">
-              <Link className="link" to={`/posts?cat=${c.name}`}>
-                {/*link the category to "/posts?cat=category" */}
-                {/* this link will be taken by search in homepage.js to send the req at the database to get post accordingly */}
+              <Link className="link" to={`/posts?cat=${c.name}`}> 
                 {c.name}
               </Link>
             </li>
           ))}
         </ul>
-      </div>
+          </div> */}
     </div>
   );
 }

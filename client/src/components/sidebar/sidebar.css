@@ -22,7 +22,7 @@
 .item1 {
   background-color: rgb(29, 17, 51);
   color: white;
-  border-radius: 8%;
+  /* border-radius: 8%; */
   margin-bottom: 20px;
   border: none;
   font-family: "Edu VIC WA NT Beginner", cursive;

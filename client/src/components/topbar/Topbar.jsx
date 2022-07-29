@@ -27,13 +27,24 @@ export default function Topbar() {
               HOME
             </Link>
           </li>
-          <li className="topListItem">ABOUT</li>
-          <li className="topListItem">CONTACT</li>
+
+          <li className="topListItem">
+            <Link to="/About" className="link">
+              ABOUT
+            </Link>
+          </li>
+
+          <li className="topListItem">
+            <Link to="/Contact" className="link">
+              CONTACT
+            </Link>
+          </li>
           <li className="topListItem">
             <Link className="link" to="/write">
               WRITE
             </Link>
           </li>
+
           {user && (
             <li className="topListItem" onClick={handleLogout}>
               LOGOUT

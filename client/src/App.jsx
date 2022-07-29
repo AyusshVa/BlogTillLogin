@@ -5,6 +5,8 @@ import Register from "./pages/register/Register";
 import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact.jsx";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./context/Context";
@@ -28,6 +30,12 @@ function App() {
         </Route>
         <Route path="/write">{user ? <Write /> : <Login />}</Route>
         <Route path="/settings">{user ? <Settings /> : <Login />}</Route>
+        <Route path="/About">
+          <About />
+        </Route>
+        <Route path="/Contact">
+          <Contact />
+        </Route>
       </Switch>
     </Router>
   );

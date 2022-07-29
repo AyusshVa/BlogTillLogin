@@ -49,6 +49,24 @@
   outline-style: none;
 }
 
+.CategoryInput {
+  font-size: 20px;
+  margin-left: 13px;
+  margin-top: 40px;
+  padding-left: 9px;
+  border: none;
+  width: 70vw;
+}
+
+.CategoryInput::placeholder {
+  color: rgb(189, 185, 185);
+  font-weight: 400;
+}
+
+.CategoryInput:focus {
+  outline-style: none;
+}
+
 .writeText {
   width: 70vw;
   height: 100vh;
